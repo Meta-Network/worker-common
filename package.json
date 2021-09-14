@@ -1,0 +1,50 @@
+{
+  "name": "@metaio/worker-common",
+  "version": "1.0.0",
+  "description": "Meta worker common",
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Meta-Network/worker-common.git"
+  },
+  "keywords": [],
+  "scripts": {
+    "prebuild": "rimraf lib",
+    "build": "tsc --project tsconfig.build.json",
+    "format": "prettier --write 'src/**/*.ts'",
+    "lint": "eslint 'src/**/*.ts' --fix",
+    "prepare": "husky install",
+    "prepack": "yarn run build"
+  },
+  "devDependencies": {
+    "@metaio/worker-model": "^1.1.1",
+    "@types/node": "^16.9.1",
+    "@types/superagent": "^4.1.12",
+    "@typescript-eslint/eslint-plugin": "^4.30.0",
+    "@typescript-eslint/parser": "^4.30.0",
+    "eslint": "^7.32.0",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-import": "^2.24.2",
+    "eslint-plugin-prettier": "^4.0.0",
+    "eslint-plugin-simple-import-sort": "^7.0.0",
+    "husky": ">=6",
+    "lint-staged": ">=10",
+    "prettier": "^2.3.2",
+    "rimraf": "^3.0.2",
+    "superagent": "^6.1.0",
+    "typescript": "^4.4.2",
+    "winston": "^3.3.3",
+    "winston-loki": "^6.0.1"
+  },
+  "peerDependencies": {
+    "@metaio/worker-model": "1.1.x",
+    "superagent": "6.x",
+    "winston": "3.x",
+    "winston-loki": "6.x"
+  },
+  "lint-staged": {
+    "*.{js,ts}": "eslint --cache --fix"
+  }
+}
