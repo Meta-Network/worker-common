@@ -14,17 +14,23 @@ export const isProd = (): boolean => {
   return process.env.NODE_ENV === 'production';
 };
 
-export const isDeployTask = (conf: unknown): boolean => {
+export const isDeployTask = (
+  conf: unknown,
+): conf is MetaWorker.Configs.DeployTaskConfig => {
   if ((conf as MetaWorker.Configs.DeployTaskConfig).template) return true;
   return false;
 };
 
-export const isPublishTask = (conf: unknown): boolean => {
+export const isPublishTask = (
+  conf: unknown,
+): conf is MetaWorker.Configs.PublishTaskConfig => {
   if ((conf as MetaWorker.Configs.PublishTaskConfig).site) return true;
   return false;
 };
 
-export const isPostTask = (conf: unknown): boolean => {
+export const isPostTask = (
+  conf: unknown,
+): conf is MetaWorker.Configs.PostTaskConfig => {
   if ((conf as MetaWorker.Configs.PostTaskConfig).post) return true;
   return false;
 };
