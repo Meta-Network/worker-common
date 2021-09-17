@@ -1,6 +1,6 @@
 {
   "name": "@metaio/worker-common",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "description": "Meta worker common",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
@@ -18,8 +18,16 @@
     "prepare": "husky install",
     "prepack": "yarn run build"
   },
+  "dependencies": {
+    "lodash.get": "^4.4.2",
+    "lodash.has": "^4.5.2",
+    "lodash.set": "^4.3.2"
+  },
   "devDependencies": {
     "@metaio/worker-model": "^1.2.1",
+    "@types/lodash.get": "^4.4.6",
+    "@types/lodash.has": "^4.5.6",
+    "@types/lodash.set": "^4.3.6",
     "@types/node": "^16.9.1",
     "@types/superagent": "^4.1.12",
     "@typescript-eslint/eslint-plugin": "^4.30.0",
