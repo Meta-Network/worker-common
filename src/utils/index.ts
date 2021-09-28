@@ -24,7 +24,7 @@ export const isDeployTask = (
 export const isPublishTask = (
   conf: unknown,
 ): conf is MetaWorker.Configs.PublishTaskConfig => {
-  if ((conf as MetaWorker.Configs.PublishTaskConfig).site) return true;
+  if ((conf as MetaWorker.Configs.PublishTaskConfig).publish) return true;
   return false;
 };
 
