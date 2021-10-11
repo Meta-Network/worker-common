@@ -34,3 +34,12 @@ export const isPostTask = (
   if ((conf as MetaWorker.Configs.PostTaskConfig).post) return true;
   return false;
 };
+
+export const checkAllowedTasks = (
+  check: MetaWorker.Enums.TaskMethod,
+  alloweds: MetaWorker.Enums.TaskMethod[],
+) => {
+  if (!alloweds.includes(check)) {
+    throw new Error(`Task method ${check} is not allowed or supported.`);
+  }
+};
